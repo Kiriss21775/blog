@@ -33,7 +33,8 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
-                                <input type="text" class="form-control" name="title" placeholder="Название категории" value="{{$category->title}}">
+                                <input type="text" class="form-control" name="title" placeholder="Название категории"
+                                       value="{{$category->title}}">
                                 @error('title')
                                 <div class="text-danger">Пустое поле</div>
                                 @enderror

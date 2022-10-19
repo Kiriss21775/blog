@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Категории</h1>
+                        <h1 class="m-0">Тэги</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -28,7 +28,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{route('admin.category.create')}}" class="btn btn-block btn-primary">Добавить</a>
+                        <a href="{{route('admin.tag.create')}}" class="btn btn-block btn-primary">Добавить</a>
                     </div>
                 </div>
                 <div class="row">
@@ -40,20 +40,20 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th colspan="2" class="text-center">Действие</th>
+                                        <th colspan="3" class="text-center">Действие</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($categories as $category)
+                                    @foreach($tags as $tag)
                                         <tr>
-                                            <td>{{$category->id}}</td>
-                                            <td>{{$category->title}}</td>
-                                            <td><a href="{{route('admin.category.show', $category->id)}}"> <i
+                                            <td>{{$tag->id}}</td>
+                                            <td>{{$tag->title}}</td>
+                                            <td class="text-center"><a href="{{route('admin.tag.show', $tag->id)}}"> <i
                                                         class="far fa-eye"></i></a></td>
-                                            <td><a href="{{route('admin.category.edit', $category->id)}}"
+                                            <td class="text-center"><a href="{{route('admin.tag.edit', $tag->id)}}"
                                                    class="text-success"> <i class="fas fa-pen-alt"></i></a></td>
                                             <td class="text-center">
-                                                <form action="{{route('admin.category.destroy', $category->id)}}"
+                                                <form action="{{route('admin.tag.destroy', $tag->id)}}"
                                                       method="POST">
                                                     @csrf
                                                     @method('DELETE')
