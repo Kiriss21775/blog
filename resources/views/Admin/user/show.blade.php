@@ -12,7 +12,7 @@
                         <h1 class="m-0 mr-2">{{$user->name}}</h1>
                         <a href="{{route('admin.user.edit', $user->id)}}" class="text-success"> <i
                                 class="fas fa-pen-alt"></i></a>
-                        <form action="{{route('admin.user.delete', $user->id)}}" method="POST">
+                        <form action="{{route('admin.user.destroy', $user->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="border-0 bg-transparent">

@@ -33,11 +33,20 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Название категории"
+                                <input type="text" class="form-control" name="name" placeholder="Имя пользователя"
                                        value="{{$user->name}}">
                                 @error('name')
-                                <div class="text-danger">Пустое поле</div>
+                                <div class="text-danger"> {{$message}} </div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" placeholder="email" value="{{$user->email}}">
+                                @error('email')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group w-50">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
                             </div>
                             <input type="submit" class="btn btn-btn btn-primary" value="Обновить">
                         </form>
