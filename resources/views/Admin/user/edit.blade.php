@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Редактирование "{{$user->id}}" категории</h1>
+                        <h1 class="m-0">Редактирование пользователя</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -45,9 +45,24 @@
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
+
                             <div class="form-group w-50">
-                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                <label>Выберите роль</label>
+                                <select name="role" class="form-control">
+                                    @foreach($roles as $id => $role)
+                                        <option value="{{$id}}"
+                                            {{$id == $user->role ? 'selected' : ''}}
+                                        >{{$role}}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
                             </div>
+                            <div class="form-group w-50">
+                               <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+
                             <input type="submit" class="btn btn-btn btn-primary" value="Обновить">
                         </form>
                     </div>
