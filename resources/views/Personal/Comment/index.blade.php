@@ -47,7 +47,7 @@
                                                         class="far fa-eye"></i></a></td>
 
                                             <td class="text-center">
-                                                <form action="{{route('personal.liked.destroy', $comment->id)}}"
+                                                <form action="{{route('personal.comment.destroy', $comment->id)}}"
                                                       method="POST">
                                                     @csrf
                                                     @method('DELETE')
