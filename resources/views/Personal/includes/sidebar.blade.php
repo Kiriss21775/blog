@@ -10,7 +10,26 @@
                 <a href="{{route('personal.main.index')}}" class="nav-link">
                     <i class="nav-icon fas fa-home "></i>
                     <p>
-                        Главная
+                        Личный кабинет
+                    </p>
+                </a>
+            </li>
+
+            @if(auth()->user()->role == 1)
+            <li class="nav-item">
+                <a href="{{route('admin.main.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-home "></i>
+                    <p>
+                        Админка
+                    </p>
+                </a>
+            </li>
+            @endif
+            <li class="nav-item">
+                <a href="{{route('post.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                        Главная страница
                     </p>
                 </a>
             </li>
@@ -30,6 +49,7 @@
                     </p>
                 </a>
             </li>
+
         </ul>
     </div>
     <!-- /.sidebar -->
